@@ -1,0 +1,20 @@
+<!DOCTYPE html ng-app="angularfire-todomvc">
+<html>
+<head>
+	<title>Angularfire TodoMVC</title>
+	<!-- Firebase -->
+	<script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div ng-controller="todoController as todo">
+	<list-display ng-repeat="item in items"></list-display>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
