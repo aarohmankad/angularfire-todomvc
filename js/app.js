@@ -1,20 +1,45 @@
-var app = angular.module('angularfire-todomvc', ['firebase']);
+(function () {
+	var app = angular.module('angularfire-todomvc', ['firebase']);
 
-app.controller('todoController', ['$firebase', function($firebase){
-	var firebaseRef = new Firebase('https://angularfire-todomvc.firebaseio.com/');
+	app.controller('todoController', ['$scope', '$firebase', function($scope, $firebase){
+		
+		var firebaseRef = new Firebase('https://angularfire-todomvc.firebaseio.com/items');
+		this.items = $firebase(firebaseRef);
 
-	$scope.items = firebaseRef.child('items');
-}]);
+	}]);
 
-app.directive('listDisplay', function () {
-	return{
-		replace: true,
-		restrict: 'E',
-		templateUrl: '../views/list-info.html',
-		controller: function ($firebase) {
-			this.checkOff = function () {
+	app.directive('listInput', function () {
+		return{
+			replace: true,
+			restrict: 'E',
+			templateUrl: '../views/list-input.html',
+			controller: function ($scope, $firebase) {
 				
-			};
-		}
-	};
-});
+				$scope.submitItem = function (e, items) {
+					if(e.keyCode != 13) return;
+					
+					items.$add({
+						body: $scope.newItem,
+						checkedOff: false
+					});
+
+					$scope.newItem = "";
+				};
+
+			},
+			controllerAs: 'list-input'
+		};
+	});
+
+	app.directive('listDisplay', function () {
+		return{
+			replace: true,
+			restrict: 'E',
+			templateUrl: '../views/list-display.html',
+			controller: function ($scope, $firebase) {
+				
+			},
+			controllerAs: 'list-display'
+		};
+	});
+})();

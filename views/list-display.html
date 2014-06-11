@@ -1,0 +1,6 @@
+<div class="row" ng-repeat="(key, item) in todo.items">
+	<div class="col-sm-2" ng-click="todo.items.$remove(key)"><span class="glyphicon glyphicon-unchecked"></span></div>
+	<div class="col-sm-10">
+		<h3>{{item.body}}</h3>
+	</div>
+</div>
