@@ -4,9 +4,9 @@
 	padding: 0;
 }
 
-.border_here
+.item-row
 {
-	border: 1px solid grey;
+	border-bottom: 1px solid #2A2A2A;
 }
 
 .item-option

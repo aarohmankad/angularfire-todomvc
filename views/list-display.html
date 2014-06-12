@@ -1,4 +1,4 @@
-<div class="row" ng-repeat="(key, item) in todo.items">
+<div class="row item-row" ng-repeat="(key, item) in todo.items">
 	<div class="col-xs-2" ng-click="checkOff(key, item, todo.items, true)"  ng-hide="item.checkedOff"><span class="glyphicon glyphicon-unchecked item-option"></span></div>
 	<div class="col-xs-2" ng-click="checkOff(key, item, todo.items, false)"  ng-show="item.checkedOff"><span class="glyphicon glyphicon-check item-option"></span></div>
 	<div class="col-xs-8">
