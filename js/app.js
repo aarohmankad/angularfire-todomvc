@@ -37,7 +37,9 @@
 			restrict: 'E',
 			templateUrl: '../views/list-display.html',
 			controller: function ($scope, $firebase) {
-				
+				$scope.checkOff = function (key, item, items, value) {
+					items.$child(key).$update({checkedOff: value});
+				}
 			},
 			controllerAs: 'list-display'
 		};

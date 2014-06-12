@@ -3,3 +3,23 @@
 	margin: 0;
 	padding: 0;
 }
+
+.border_here
+{
+	border: 1px solid grey;
+}
+
+.item-option
+{
+	width: 100%;
+	font-size: 22px;
+	text-align: center;
+	line-height: 55px;
+	margin-top: 5px;
+}
+
+.strikethrough
+{
+	color: #ABABAB;
+	text-decoration: line-through;
+}
